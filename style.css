@@ -1,0 +1,100 @@
+:root {
+  --bg-color: #0e0e0e;
+  --text-color: #ffffff;
+  --editor-bg: #1e1e1e;
+  --border-color: #333;
+  --highlight-color: #00f7ff;
+  --textarea-text: #f0f0f0;
+}
+
+body.dark {
+  --bg-color: #0e0e0e;
+  --text-color: #ffffff;
+  --editor-bg: #1e1e1e;
+  --border-color: #333;
+  --highlight-color: #00f7ff;
+  --textarea-text: #e3e3e3;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header with glow and bold title */
+header {
+  background-color: var(--editor-bg);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--highlight-color);
+  text-shadow: 0 0 8px #00f7ff, 0 0 12px #00f7ff;
+  letter-spacing: 1px;
+}
+
+header button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+header button:hover {
+  background-color: var(--highlight-color);
+  color: #000;
+}
+
+.editor-container {
+  display: flex;
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+textarea {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: var(--editor-bg);
+  color: var(--textarea-text);
+  border-right: 1px solid var(--border-color);
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  caret-color: #00f7ff;
+}
+
+textarea:last-child {
+  border-right: none;
+}
+
+/* Optional scrollbar customization */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+iframe {
+  height: 40vh;
+  width: 100%;
+  border: none;
+}
